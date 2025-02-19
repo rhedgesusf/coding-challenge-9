@@ -59,4 +59,45 @@ console.log(mgr1.getDetails());
 
 console.log(mgr1.calculateBonus()); // Coding Challenge #9 instructions document are wrong, it says the expected output should be 9600 but even if you add the 10% bonus to 8000 that is only 8800.
 
+//////////////////////////////////////
+// Task 3: Creating a Company Class //
+//////////////////////////////////////
 
+console.log("--------------------------------------");
+console.log("Task 3: Creating a Company Class");
+
+class Company {
+    name;
+    employees = [];
+
+    constructor(name){
+        this.name = name;
+    }
+
+    addEmployee(employee) {
+        this.employees.push(employee);
+    }
+    listEmployees(){
+        this.employees.forEach(employee => console.log(employee.getDetails()));
+    }
+    calculateTotalPayroll(){
+        return this.employees.reduce((sum, employee) => sum + employee.salary, 0);
+    }
+} 
+
+const company = new Company("TechCorp");
+
+company.addEmployee(emp1);
+company.addEmployee(mgr1);
+company.listEmployees();
+
+///////////////////////////////////////////
+// Task 4: Implementing a Payroll System //
+///////////////////////////////////////////
+
+console.log("--------------------------------------");
+console.log("Task 4: Implementing a Payroll System");
+
+// Added calculateTotalPayroll() to Company class
+
+console.log(company.calculateTotalPayroll());
