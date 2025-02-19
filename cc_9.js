@@ -50,14 +50,14 @@ class Manager extends Employee {
         return `Manager: ${this.name}, ID: ${this.id}, Department: ${this.department}, Salary: ${this.salary}, Team Size: ${this.teamSize}`;
     }
     calculateBonus() {
-        return this.salary * .1;
+        return this.salary * 12 * .1;
     }
 }
 
 const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5);
 console.log(mgr1.getDetails());
 
-console.log(mgr1.calculateBonus()); // Coding Challenge #9 instructions document are wrong, it says the expected output should be 9600 but even if you add the 10% bonus to 8000 that is only 8800.
+console.log(mgr1.calculateBonus());
 
 //////////////////////////////////////
 // Task 3: Creating a Company Class //
@@ -101,3 +101,4 @@ console.log("Task 4: Implementing a Payroll System");
 // Added calculateTotalPayroll() to Company class
 
 console.log(company.calculateTotalPayroll());
+
