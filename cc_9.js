@@ -83,6 +83,9 @@ class Company {
     calculateTotalPayroll(){
         return this.employees.reduce((sum, employee) => sum + employee.salary, 0);
     }
+    promoteToManager(employee, teamSize) {
+        employee = new Manager(employee.name, employee.id, employee.department, employee.salary, teamSize);
+    }
 } 
 
 const company = new Company("TechCorp");
@@ -102,3 +105,12 @@ console.log("Task 4: Implementing a Payroll System");
 
 console.log(company.calculateTotalPayroll());
 
+/////////////////////////////////////
+// Task 5: Implementing Promotions //
+/////////////////////////////////////
+
+console.log("--------------------------------------");
+console.log("Task 5: Implementing Promotions");
+
+company.promoteToManager(emp1, 3);
+company.listEmployees();
