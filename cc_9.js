@@ -87,7 +87,11 @@ class Company {
         return this.employees.reduce((sum, employee) => sum + employee.calculateAnnualSalary(), 0);
     }
     promoteToManager(employee, teamSize) {
-        employee = new Manager(employee.name, employee.id, employee.department, employee.salary, teamSize);
+        let newManager = new Manager(employee.name, employee.id, employee.department, employee.salary, teamSize);
+        let index = this.employees.findIndex((element) => element.id === employee.id);
+        if (index != -1) {
+            this.employees[index] = newManager;
+        }
     }
 } 
 
