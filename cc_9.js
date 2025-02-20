@@ -52,6 +52,9 @@ class Manager extends Employee {
     calculateBonus() {
         return this.salary * 12 * .1;
     }
+    calculateAnnualSalary() {
+        return super.calculateAnnualSalary() + this.calculateBonus();
+    }
 }
 
 const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5);
@@ -81,7 +84,7 @@ class Company {
         this.employees.forEach(employee => console.log(employee.getDetails()));
     }
     calculateTotalPayroll(){
-        return this.employees.reduce((sum, employee) => sum + employee.salary, 0);
+        return this.employees.reduce((sum, employee) => sum + employee.calculateAnnualSalary(), 0);
     }
     promoteToManager(employee, teamSize) {
         employee = new Manager(employee.name, employee.id, employee.department, employee.salary, teamSize);
